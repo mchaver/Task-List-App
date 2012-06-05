@@ -1,0 +1,18 @@
+//
+//  AppDelegate.h
+//  To Do List
+//
+//  Created by Jimmy Haver on 6/5/12.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import <sqlite3.h>
+
+@interface AppDelegate : UIResponder <UIApplicationDelegate> {
+    sqlite3 *db;
+}
+
+@property (strong, nonatomic) UIWindow *window;
+
+@end
