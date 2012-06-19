@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C33F6CC158B3302008E9A9C /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C33F6CB158B3302008E9A9C /* CategoryViewController.m */; };
+		4C33F6CF158B3A2F008E9A9C /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C33F6CE158B3A2F008E9A9C /* List.m */; };
+		4C33F6D2158B9CB8008E9A9C /* TaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C33F6D1158B9CB8008E9A9C /* TaskViewController.m */; };
 		4C379D1D157E2B8E00BB25D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C379D1C157E2B8E00BB25D5 /* UIKit.framework */; };
 		4C379D1F157E2B8E00BB25D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C379D1E157E2B8E00BB25D5 /* Foundation.framework */; };
 		4C379D21157E2B8E00BB25D5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C379D20157E2B8E00BB25D5 /* CoreGraphics.framework */; };
@@ -17,13 +20,19 @@
 		4C379D33157E2B8E00BB25D5 /* UnfinishedTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C379D32157E2B8E00BB25D5 /* UnfinishedTaskViewController.m */; };
 		4C379D3B157E2CA500BB25D5 /* UnfinishedTaskTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C379D3A157E2CA500BB25D5 /* UnfinishedTaskTableViewController.m */; };
 		4C379D3E157E2DF300BB25D5 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C379D3D157E2DF300BB25D5 /* Database.m */; };
-		4C379D41157E33EE00BB25D5 /* UnfinishedTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C379D40157E33EE00BB25D5 /* UnfinishedTask.m */; };
+		4C379D41157E33EE00BB25D5 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C379D40157E33EE00BB25D5 /* Task.m */; };
 		4C379D48157E545600BB25D5 /* AddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C379D47157E545600BB25D5 /* AddTaskViewController.m */; };
 		4C379D4B157E549200BB25D5 /* ShowUnfinishedTaskCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C379D4A157E549200BB25D5 /* ShowUnfinishedTaskCellViewController.m */; };
 		4C379D4D157E553800BB25D5 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C379D4C157E553800BB25D5 /* libsqlite3.0.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C33F6CA158B3302008E9A9C /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoryViewController.h; path = ../CategoryViewController.h; sourceTree = "<group>"; };
+		4C33F6CB158B3302008E9A9C /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryViewController.m; path = ../CategoryViewController.m; sourceTree = "<group>"; };
+		4C33F6CD158B3A2F008E9A9C /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
+		4C33F6CE158B3A2F008E9A9C /* List.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = List.m; sourceTree = "<group>"; };
+		4C33F6D0158B9CB8008E9A9C /* TaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskViewController.h; sourceTree = "<group>"; };
+		4C33F6D1158B9CB8008E9A9C /* TaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskViewController.m; sourceTree = "<group>"; };
 		4C379D18157E2B8E00BB25D5 /* To Do List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "To Do List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C379D1C157E2B8E00BB25D5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4C379D1E157E2B8E00BB25D5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -41,8 +50,8 @@
 		4C379D3A157E2CA500BB25D5 /* UnfinishedTaskTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnfinishedTaskTableViewController.m; sourceTree = "<group>"; };
 		4C379D3C157E2DF300BB25D5 /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Database.h; sourceTree = "<group>"; };
 		4C379D3D157E2DF300BB25D5 /* Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Database.m; sourceTree = "<group>"; };
-		4C379D3F157E33EE00BB25D5 /* UnfinishedTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnfinishedTask.h; sourceTree = "<group>"; };
-		4C379D40157E33EE00BB25D5 /* UnfinishedTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnfinishedTask.m; sourceTree = "<group>"; };
+		4C379D3F157E33EE00BB25D5 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		4C379D40157E33EE00BB25D5 /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
 		4C379D46157E545600BB25D5 /* AddTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTaskViewController.h; sourceTree = "<group>"; };
 		4C379D47157E545600BB25D5 /* AddTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTaskViewController.m; sourceTree = "<group>"; };
 		4C379D49157E549200BB25D5 /* ShowUnfinishedTaskCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowUnfinishedTaskCellViewController.h; sourceTree = "<group>"; };
@@ -65,6 +74,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C33F6C8158B27DA008E9A9C /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				4C33F6CA158B3302008E9A9C /* CategoryViewController.h */,
+				4C33F6CB158B3302008E9A9C /* CategoryViewController.m */,
+				4C33F6D0158B9CB8008E9A9C /* TaskViewController.h */,
+				4C33F6D1158B9CB8008E9A9C /* TaskViewController.m */,
+			);
+			name = Control;
+			sourceTree = "<group>";
+		};
+		4C33F6C9158B27E5008E9A9C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4C33F6CD158B3A2F008E9A9C /* List.h */,
+				4C33F6CE158B3A2F008E9A9C /* List.m */,
+				4C379D3C157E2DF300BB25D5 /* Database.h */,
+				4C379D3D157E2DF300BB25D5 /* Database.m */,
+				4C379D3F157E33EE00BB25D5 /* Task.h */,
+				4C379D40157E33EE00BB25D5 /* Task.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		4C379D0D157E2B8E00BB25D5 = {
 			isa = PBXGroup;
 			children = (
@@ -96,21 +129,19 @@
 		4C379D22157E2B8E00BB25D5 /* To Do List */ = {
 			isa = PBXGroup;
 			children = (
+				4C33F6C9158B27E5008E9A9C /* Model */,
+				4C33F6C8158B27DA008E9A9C /* Control */,
 				4C379D2B157E2B8E00BB25D5 /* AppDelegate.h */,
 				4C379D2C157E2B8E00BB25D5 /* AppDelegate.m */,
 				4C379D2E157E2B8E00BB25D5 /* MainStoryboard.storyboard */,
-				4C379D49157E549200BB25D5 /* ShowUnfinishedTaskCellViewController.h */,
-				4C379D4A157E549200BB25D5 /* ShowUnfinishedTaskCellViewController.m */,
-				4C379D46157E545600BB25D5 /* AddTaskViewController.h */,
-				4C379D47157E545600BB25D5 /* AddTaskViewController.m */,
-				4C379D3C157E2DF300BB25D5 /* Database.h */,
-				4C379D3D157E2DF300BB25D5 /* Database.m */,
-				4C379D3F157E33EE00BB25D5 /* UnfinishedTask.h */,
-				4C379D40157E33EE00BB25D5 /* UnfinishedTask.m */,
 				4C379D39157E2CA500BB25D5 /* UnfinishedTaskTableViewController.h */,
 				4C379D3A157E2CA500BB25D5 /* UnfinishedTaskTableViewController.m */,
 				4C379D31157E2B8E00BB25D5 /* UnfinishedTaskViewController.h */,
 				4C379D32157E2B8E00BB25D5 /* UnfinishedTaskViewController.m */,
+				4C379D46157E545600BB25D5 /* AddTaskViewController.h */,
+				4C379D47157E545600BB25D5 /* AddTaskViewController.m */,
+				4C379D49157E549200BB25D5 /* ShowUnfinishedTaskCellViewController.h */,
+				4C379D4A157E549200BB25D5 /* ShowUnfinishedTaskCellViewController.m */,
 				4C379D23157E2B8E00BB25D5 /* Supporting Files */,
 			);
 			path = "To Do List";
@@ -194,9 +225,12 @@
 				4C379D33157E2B8E00BB25D5 /* UnfinishedTaskViewController.m in Sources */,
 				4C379D3B157E2CA500BB25D5 /* UnfinishedTaskTableViewController.m in Sources */,
 				4C379D3E157E2DF300BB25D5 /* Database.m in Sources */,
-				4C379D41157E33EE00BB25D5 /* UnfinishedTask.m in Sources */,
+				4C379D41157E33EE00BB25D5 /* Task.m in Sources */,
 				4C379D48157E545600BB25D5 /* AddTaskViewController.m in Sources */,
 				4C379D4B157E549200BB25D5 /* ShowUnfinishedTaskCellViewController.m in Sources */,
+				4C33F6CC158B3302008E9A9C /* CategoryViewController.m in Sources */,
+				4C33F6CF158B3A2F008E9A9C /* List.m in Sources */,
+				4C33F6D2158B9CB8008E9A9C /* TaskViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +342,7 @@
 				4C379D38157E2B8E00BB25D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

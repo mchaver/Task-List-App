@@ -8,17 +8,29 @@
 
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
-#import "UnfinishedTask.h"
+#import "Task.h"
+#import "List.h"
 
 @interface Database : NSObject{
     sqlite3 *db;
-    UnfinishedTask *unfinishedTask;
 }
 
-@property(strong, atomic) NSMutableArray *taskArray;
--(void) selectAllUnfinishedTasks;
--(void) insertTask:(NSString *)taskName taskNotes:(NSString *)taskNotes;
+@property(nonatomic, strong) NSMutableArray *taskArray;
+@property(nonatomic, strong) NSMutableArray *listArray;
 
-//-(void) selectAllFinishedTasks;
+-(void) createListAndTaskTables;
+
+-(void) selectAllUnfinishedTasks;
+-(void) selectAllLists;
+-(List *) selectList:(int)listID;
+
+-(void) insertTask:(NSString *)taskName taskNotes:(NSString *)taskNotes;
+-(void) insertTask:(NSString *)taskName withListID:(int)listID;
+-(int) insertList;
+
+-(void) updateList;
+-(void) updateTask;
+
+-(BOOL) deleteTask:(int)taskId;
 
 @end

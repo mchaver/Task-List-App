@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "Database.h"
-#import "UnfinishedTask.h"
+#import "Task.h"
 #import "ShowUnfinishedTaskCellViewController.h"
 
-@interface UnfinishedTaskTableViewController : UITableViewController
+@interface UnfinishedTaskTableViewController : UITableViewController {
+    NSMutableArray *idArray;
+}
 
-@property(nonatomic, strong) UnfinishedTask *unfinishedTask;
+@property(nonatomic, strong) Task *unfinishedTask;
 @property(nonatomic, strong) Database *database;
 @property(nonatomic, strong) NSMutableArray *taskArray;
 

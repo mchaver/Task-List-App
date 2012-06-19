@@ -7,7 +7,6 @@
 //
 
 #import "UnfinishedTaskTableViewController.h"
-
 @interface UnfinishedTaskTableViewController ()
 
 @end
@@ -19,7 +18,7 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+    
     }
     return self;
 }
@@ -29,16 +28,12 @@
     [super viewDidLoad];
     self.title = NSLocalizedString(@"Unfinished Tasks", @"");
  
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
 }
 
 - (void)viewDidUnload
 {
-    NSLog(@"Goodbye");
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -46,7 +41,6 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -66,9 +60,10 @@
     if(cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    UnfinishedTask *unfinishedTaskObj = [database.taskArray objectAtIndex:indexPath.row];
+    Task *unfinishedTaskObj = [database.taskArray objectAtIndex:indexPath.row];
     cell.textLabel.text = unfinishedTaskObj.taskName;
-    
+    [idArray addObject:unfinishedTaskObj.taskID];
+    NSLog(@"From the array, %@",unfinishedTaskObj.taskID);
     return cell;
 }
 
@@ -80,27 +75,34 @@
     [database selectAllUnfinishedTasks];
     taskArray = [database taskArray];
     [self.tableView reloadData];
+    idArray = [[NSMutableArray alloc] initWithObjects:nil];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showUnfinishedTaskCell"]) {
         ShowUnfinishedTaskCellViewController *viewController = [segue destinationViewController];
         viewController.unfinishedTask = [self.taskArray objectAtIndex:[self.tableView indexPathForSelectedRow].row];
-        
-        //todoViewController *viewController = [segue destinationViewController];
-        //viewController.todoDetail = [self.todoArray objectAtIndex:[self.tableView indexPathForSelectedRow].row];
     }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+
+}
+
+//deleting a row
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(editingStyle == UITableViewCellEditingStyleDelete) {
+        //switch to a db call
+        int idValue = [[idArray objectAtIndex:indexPath.row] intValue];
+        if([database deleteTask:idValue]) {
+            [taskArray removeObjectAtIndex:indexPath.row];
+            [idArray removeObjectAtIndex:indexPath.row];
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        } else {
+            NSLog(@"There was trouble deleting the cell row");
+        }
+    }
 }
 
 @end

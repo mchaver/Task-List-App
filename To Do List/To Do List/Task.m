@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "UnfinishedTask.h"
+#import "Task.h"
 
-@implementation UnfinishedTask
-@synthesize taskName,taskNotes,taskDate;
+@implementation Task
+@synthesize taskID,taskName,taskNotes,taskDate;
 
 @end

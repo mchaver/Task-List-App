@@ -13,7 +13,7 @@
 @end
 
 @implementation ShowUnfinishedTaskCellViewController
-@synthesize taskName, notes, unfinishedTask;
+@synthesize taskName, notes, unfinishedTask, date;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,8 +41,17 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    unfinishedTask = (UnfinishedTask *)[self unfinishedTask];
+    unfinishedTask = (Task *)[self unfinishedTask];
     self.taskName.text = unfinishedTask.taskName;
     self.notes.text = unfinishedTask.taskNotes;
+    
+    //date formatting
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+    [dateFormatter setLocale:usLocale];
+    
+    self.date.text = [dateFormatter stringFromDate:unfinishedTask.taskDate]; 
 }
 @end

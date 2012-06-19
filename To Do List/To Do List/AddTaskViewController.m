@@ -45,4 +45,9 @@
     [database insertTask:self.taskName.text taskNotes:self.taskNotes.text];
 }
 
+-(IBAction)backgroundTap:(id)sender{
+    [taskName resignFirstResponder];
+    [taskNotes resignFirstResponder];
+}
+
 @end

@@ -7,34 +7,56 @@
 //
 
 #import "AppDelegate.h"
+#import "Database.h"
 
+@interface AppDelegate()
+@property (nonatomic, strong) Database *database;
+@end
 @implementation AppDelegate
 
 @synthesize window = _window;
+@synthesize database = _database;
+
+-(Database *)database {
+    if(!_database) _database = [[Database alloc] init];
+    return _database;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [self.database createListAndTaskTables];
+    /*
     char *emsg;
     BOOL fileExist;
     
     NSArray *dirPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentPath = [[dirPath objectAtIndex:0] stringByAppendingPathComponent:@"todo.sqlite"];
     
-    fileExist = [[NSFileManager alloc] fileExistsAtPath:documentPath];
     //delete database file
-    //[[NSFileManager defaultManager] removeItemAtPath:documentPath error:nil];
+    [[NSFileManager defaultManager] removeItemAtPath:documentPath error:nil];
+    fileExist = [[NSFileManager alloc] fileExistsAtPath:documentPath];
     if(!fileExist) {
         if(!(sqlite3_open([documentPath UTF8String], &db) == SQLITE_OK)) {
             
         } else {
-            const char *sqlTable = "CREATE TABLE if not exists todo (id INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE , task TEXT NOT NULL , notes TEXT, datetime DATETIME, finished BOOL NOT NULL DEFAULT FALSE)";
-            
-            if(sqlite3_exec(db,sqlTable, NULL, NULL, &emsg) != SQLITE_OK){
-                NSLog(@"There is a problem with the SQL statement");
+            const char *sqlTable1 = "CREATE TABLE if not exists category (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE, category TEXT NOT NULL)";
+            if(sqlite3_exec(db,sqlTable1, NULL, NULL, &emsg) != SQLITE_OK){
+                NSLog(@"Creating the table did not work");
+            } else {
+                NSLog(@"The table has been created");
             }
             
+            const char *sqlTable2 = "CREATE TABLE if not exists todo (id INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE , task TEXT NOT NULL , notes TEXT, datetime DOUBLE, finished BOOL NOT NULL DEFAULT FALSE, categoryid INTEGER NOT NULL, FOREIGN KEY(categoryid) REFERENCES category(id))";
+            
+            if(sqlite3_exec(db,sqlTable2, NULL, NULL, &emsg) != SQLITE_OK){
+                NSLog(@"Creating the table did not work");
+            } else {
+                NSLog(@"The table has been created");
+            }
+            sqlite3_close(db);
         }
     }
+    */
     return YES;
 }
 							

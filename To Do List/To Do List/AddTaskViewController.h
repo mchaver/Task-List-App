@@ -16,5 +16,6 @@
 @property (nonatomic, strong) Database *database;
 
 -(IBAction)saveTaskToDatabase:(id)sender;
+-(IBAction)backgroundTap:(id)sender;
 //- (IBAction)saveToDo:(id)sender;
 @end
